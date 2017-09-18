@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Common;
+using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 
 namespace QuestBox
 {
 	public partial class App : Application
 	{
-		public App ()
+	    public static UnityContainer Container { get; set; }
+	    public static string BaseURI = "http://dev.brainwiz.ru";
+        public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new QuestBox.MainPage();
+		    var uCfg = new UnityConfig();
+		    Container = uCfg.Config();
+            MainPage = new QuestBox.MainPage();
 		}
 
 		protected override void OnStart ()

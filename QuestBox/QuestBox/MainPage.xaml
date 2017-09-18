@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:QuestBox"
              x:Class="QuestBox.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <ContentPage.Content>
+        <StackLayout>
+	        <Label Text="Welcome to QuestBox!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" />
+            <Entry x:Name="loginEntry" Text="Логин:"></Entry>
+            <Entry x:Name="passwordEntry" Text="Пароль:"></Entry>
+            <Button Text="Login" Clicked="LoginClicked"></Button>
+            <Label Text="Powered by Wizbe." 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
